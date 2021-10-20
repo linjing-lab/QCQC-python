@@ -42,11 +42,11 @@ class Geometry:
         end = timer()
         #print("assign basis", end - start) # Time in seconds
 
-        self._get_S()
-        self._get_T()
-        self._get_V()
-        self._get_HCore()
-        self._get_ERI()
+        #self._get_S()
+        #self._get_T()
+        #self._get_V()
+        #self._get_HCore()
+        #self._get_ERI()
         #self._get_DX()
         #self._get_DY()
         #self._get_DZ()
@@ -149,7 +149,7 @@ class Geometry:
                 time+=end-start
             offi+=shell_to_basis(self.basis[i].m) 
         print("Overlap  integrals from Python take %f sec." % time) # Time in seconds
-        print(s)
+        #print(s)
         return s
 
     def _get_T(self):
@@ -226,7 +226,7 @@ class Geometry:
         del xyz_all
         del proton_all
         print("One-body integrals from Python take %f sec." % time) # Time in seconds
-        print(fcore)
+        #print(fcore)
         return fcore
 
 
