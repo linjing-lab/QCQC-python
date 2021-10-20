@@ -1,0 +1,2 @@
+numpy
+basis_set_exchange
