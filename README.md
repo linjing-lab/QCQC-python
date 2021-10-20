@@ -1,14 +1,14 @@
 **Content of the source code documentation**  
 
 1. QCQC-python is a open source quantum chemistry package for education
-1. It generate basic integrals for HF, CIS or MP2.
+1. It generates basic integrals for HF, CIS or MP2.
 1. Main requirements
     1. basis-set-exchange
 1. Further information:
 
 # QCQC-python
 
-This is a template for your quantum chemistry projects in <quantum chemistry> course at Shandong University by Yang Guo. 
+This is a template for quantum chemistry projects in <quantum chemistry> course at Shandong University by Yang Guo. 
 
 For installation, run  
 `source setup.sh`
