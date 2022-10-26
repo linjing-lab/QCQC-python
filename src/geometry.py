@@ -97,9 +97,6 @@ class Geometry:
 
             for k, el in bs_str['elements'].items():
 
-                if not 'electron_shells' in el:
-                    continue
-
                 for sh in el['electron_shells']:
                     exponents = sh['exponents']
                     # transpose of the coefficient matrix
@@ -111,20 +108,18 @@ class Geometry:
                         # shell loop over each momentum
                         #for shell in self._get_all_shells(value):
                         #assign XYZ for each shell and scale with BOHR
-                        #xyz = np.array(self.xyz[id], dtype='f')
-                        xyz = np.array(self.xyz[id]) 
+                        xyz = np.array(self.xyz[id])
                         #assign angular_momentum for each shell
-                        #mom = np.array(shell, dtype=np.int32)
                         mom = int(value)
                         #assign exponents for each shell
-                        #exp = np.array(list(map(float, exponents)),dtype='f')
                         exp = np.array(list(map(float, exponents)))
-                        #assign coefficients for each shell
-                        #coef= np.array(list(map(float, coeff_t[counter])),dtype='f')
-                        coef= np.array(list(map(float, coeff_t[counter])))
-                        self.basis.append(Basis(coef, exp, mom, xyz)) 
-                        self.nbs +=shell_to_basis(mom)                     
-                        self.nsh=self.nsh+1
+                        for nn in range(0, len(coeff_t)):
+                            #assign coefficients for each shell
+                            coef= np.array(list(map(float, coeff_t[nn])))
+                            self.basis.append(Basis(coef, exp, mom, xyz))
+                            self.nbs +=shell_to_basis(mom)
+                            self.nsh=self.nsh+1
+
         print("Num.  basisset=",self.nbs)
         print("Num.  basshell=",self.nsh)
         #print(self.shell)
@@ -172,6 +167,7 @@ class Geometry:
             offi+=shell_to_basis(self.basis[i].m)
         print("Kinetic  integrals from Python take %f sec." % time) # Time in seconds
         #print(t)
+        return t
 
     def _get_V(self):
         v = np.zeros(shape=(self.nbs,self.nbs));
