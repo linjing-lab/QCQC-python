@@ -4,7 +4,7 @@ import copy
 sys.setrecursionlimit(100000)
 from numba import njit,jit
 from timeit import default_timer as timer
-from util import Fgamma,hyp1f1_in_njit
+from .util import Fgamma,hyp1f1_in_njit
 
 @njit('int64(int64)')
 def shell_to_basis(am):

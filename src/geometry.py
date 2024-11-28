@@ -4,11 +4,11 @@ import copy
 import sys
 import basis_set_exchange as bse
 from  basis_set_exchange import lut
-import parameter
+from . import parameter
 import numpy as np
 from scipy.special import factorial2 as fact2
-from one_int import shell_to_basis
-from one_int import S, T, V, ERI, DIP 
+from .one_int import shell_to_basis
+from .one_int import S, T, V, ERI, DIP 
 from timeit import default_timer as timer
 
 class Geometry:

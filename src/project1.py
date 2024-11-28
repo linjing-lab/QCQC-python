@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 import numpy as np
-import parameter
-from geometry import Geometry
+from . import parameter
+from .geometry import Geometry
 from timeit import default_timer as timer
 
 
