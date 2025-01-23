@@ -1,7 +1,7 @@
 import numpy
 from src.project1 import CH4, s, h, eri
-
-numpy.save('CH4_enuc.npy', CH4.enuc)
+# change molecule in src.project1
+numpy.save('CH4_enuc.npy', CH4.enuc) # save enuc from molecule of project1
 numpy.save('s.npy', s)
 numpy.save('h.npy', h)
 numpy.save('eri.npy', eri)

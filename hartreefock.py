@@ -1,7 +1,7 @@
 import numpy
 
 # CH4_enuc = 13.497304462033398
-CH4_enuc = numpy.load('CH4_enuc.npy')
+CH4_enuc = numpy.load('CH4_enuc.npy') # load another molecules from src.project1 and store_val
 s = numpy.load('s.npy') # S_μv
 h = numpy.load('h.npy') # H_μv
 eri = numpy.load('eri.npy') # (μv|σλ)
@@ -42,8 +42,8 @@ def get_G(density):
             temp = 0
             for la in range(s_s[0]): # λ
                 for sig in range(s_s[0]): # σ
-                    temp += density[la][sig]*(eri[u][v][sig][la] - 0.5*eri[u][la][sig][v]) # -40.19863935369017, -40.19869049846915
-                    # temp += density[la][sig]*(eri[u][v][la][sig] - 0.5*eri[u][sig][la][v]) # -40.19863935369027, -40.19869049846915
+                    temp += density[la][sig]*(eri[u][v][sig][la] - 0.5*eri[u][la][sig][v]) # CH4 -40.19863935369017, -40.19869049846915
+                    # temp += density[la][sig]*(eri[u][v][la][sig] - 0.5*eri[u][sig][la][v]) # CH4 -40.19863935369027, -40.19869049846915
             G[u][v] = temp
     return G
 
